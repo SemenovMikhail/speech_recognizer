@@ -1,0 +1,36 @@
+@main("Speech recognition web application") {
+	<script src="@routes.Assets.at("js/main.js")"></script>
+	<script src="@routes.Assets.at("js/wavrecorder.js")"></script>
+	<script src="@routes.Assets.at("js/audiodisplay.js")"></script>
+	<div class="container">
+		<div class="row">
+		    <div class="col-lg-6 col-lg-offset-3" style="float: none; display: inline-block; vertical-align: middle;">
+		    	<br>
+			    <form method="POST" action="@routes.Application.upload" enctype="multipart/form-data">
+			    	<input id="input-id" type="file" class="file" data-preview-file-type="text" name="file">
+				</form>
+				<br>
+			</div>
+			<div class="col-lg-6 col-lg-offset-3" style="float: none; display: inline-block; vertical-align: middle; border: 2px solid black;">
+				<div id="viz">
+					<br>
+					<canvas id="analyser" width="550" height="200" style="border: 2px solid black;"></canvas>
+					<br>
+					<canvas id="wavedisplay" width="550" height="200" style="border: 2px solid black;"></canvas>
+				</div>
+				<div id="controls">
+					<div class="pull-left">
+						<img id="record" src="@routes.Assets.at("images/mic128.png")" onclick="toggleRecording(this);" class="btn">
+					</div>
+					<div class="pull-right">
+						<a href="@routes.Application.recognizeRecorded()" id="rec_recorded" style="display:none;"><img src="@routes.Assets.at("images/save.png")" width="128" height="128" class="btn"></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	</div>
+	
+	</div>
+}

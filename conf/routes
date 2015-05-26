@@ -1,0 +1,16 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET 	/recognize/recorded 		controllers.Application.recognizeRecorded()
+GET     /recognize/:name            controllers.Application.sendRequest(name: String)
+POST    /upload                     controllers.Application.upload()
+GET 	/file/*file 				controllers.Application.file(file)
+GET		/							controllers.Application.index()
+
+GET     /assets/javascript/routes.js controllers.Application.jsRoutes
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
+

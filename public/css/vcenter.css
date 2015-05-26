@@ -1,0 +1,5 @@
+.vertical-align {
+	float: none;
+	display: inline-block;
+	vertical-align: middle;
+}
